@@ -12,94 +12,91 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/grain_jars", type: :request do
-  
+RSpec.describe '/grain_jars', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # GrainJar. As you add validations to GrainJar, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    skip('Add a hash of attributes valid for your model')
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    skip('Add a hash of attributes invalid for your model')
+  end
 
-  describe "GET /index" do
-    it "renders a successful response" do
+  describe 'GET /index' do
+    it 'renders a successful response' do
       GrainJar.create! valid_attributes
       get grain_jars_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
+  describe 'GET /show' do
+    it 'renders a successful response' do
       grain_jar = GrainJar.create! valid_attributes
       get grain_jar_url(grain_jar)
       expect(response).to be_successful
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
+  describe 'GET /new' do
+    it 'renders a successful response' do
       get new_grain_jar_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
+  describe 'GET /edit' do
+    it 'renders a successful response' do
       grain_jar = GrainJar.create! valid_attributes
       get edit_grain_jar_url(grain_jar)
       expect(response).to be_successful
     end
   end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new GrainJar" do
-        expect {
+  describe 'POST /create' do
+    context 'with valid parameters' do
+      it 'creates a new GrainJar' do
+        expect do
           post grain_jars_url, params: { grain_jar: valid_attributes }
-        }.to change(GrainJar, :count).by(1)
+        end.to change(GrainJar, :count).by(1)
       end
 
-      it "redirects to the created grain_jar" do
+      it 'redirects to the created grain_jar' do
         post grain_jars_url, params: { grain_jar: valid_attributes }
         expect(response).to redirect_to(grain_jar_url(GrainJar.last))
       end
     end
 
-    context "with invalid parameters" do
-      it "does not create a new GrainJar" do
-        expect {
+    context 'with invalid parameters' do
+      it 'does not create a new GrainJar' do
+        expect do
           post grain_jars_url, params: { grain_jar: invalid_attributes }
-        }.to change(GrainJar, :count).by(0)
+        end.to change(GrainJar, :count).by(0)
       end
 
-    
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
         post grain_jars_url, params: { grain_jar: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
-    
     end
   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+  describe 'PATCH /update' do
+    context 'with valid parameters' do
+      let(:new_attributes) do
+        skip('Add a hash of attributes valid for your model')
+      end
 
-      it "updates the requested grain_jar" do
+      it 'updates the requested grain_jar' do
         grain_jar = GrainJar.create! valid_attributes
         patch grain_jar_url(grain_jar), params: { grain_jar: new_attributes }
         grain_jar.reload
-        skip("Add assertions for updated state")
+        skip('Add assertions for updated state')
       end
 
-      it "redirects to the grain_jar" do
+      it 'redirects to the grain_jar' do
         grain_jar = GrainJar.create! valid_attributes
         patch grain_jar_url(grain_jar), params: { grain_jar: new_attributes }
         grain_jar.reload
@@ -107,26 +104,24 @@ RSpec.describe "/grain_jars", type: :request do
       end
     end
 
-    context "with invalid parameters" do
-    
+    context 'with invalid parameters' do
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
         grain_jar = GrainJar.create! valid_attributes
         patch grain_jar_url(grain_jar), params: { grain_jar: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
-    
     end
   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested grain_jar" do
+  describe 'DELETE /destroy' do
+    it 'destroys the requested grain_jar' do
       grain_jar = GrainJar.create! valid_attributes
-      expect {
+      expect do
         delete grain_jar_url(grain_jar)
-      }.to change(GrainJar, :count).by(-1)
+      end.to change(GrainJar, :count).by(-1)
     end
 
-    it "redirects to the grain_jars list" do
+    it 'redirects to the grain_jars list' do
       grain_jar = GrainJar.create! valid_attributes
       delete grain_jar_url(grain_jar)
       expect(response).to redirect_to(grain_jars_url)

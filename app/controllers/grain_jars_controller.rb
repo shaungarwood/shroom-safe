@@ -1,5 +1,5 @@
 class GrainJarsController < ApplicationController
-  before_action :set_grain_jar, only: %i[ show edit update destroy ]
+  before_action :set_grain_jar, only: %i[show edit update destroy]
 
   # GET /grain_jars or /grain_jars.json
   def index
@@ -7,8 +7,7 @@ class GrainJarsController < ApplicationController
   end
 
   # GET /grain_jars/1 or /grain_jars/1.json
-  def show
-  end
+  def show; end
 
   # GET /grain_jars/new
   def new
@@ -16,8 +15,7 @@ class GrainJarsController < ApplicationController
   end
 
   # GET /grain_jars/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /grain_jars or /grain_jars.json
   def create
@@ -25,7 +23,7 @@ class GrainJarsController < ApplicationController
 
     respond_to do |format|
       if @grain_jar.save
-        format.html { redirect_to grain_jar_url(@grain_jar), notice: "Grain jar was successfully created." }
+        format.html { redirect_to grain_jar_url(@grain_jar), notice: 'Grain jar was successfully created.' }
         format.json { render :show, status: :created, location: @grain_jar }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class GrainJarsController < ApplicationController
   def update
     respond_to do |format|
       if @grain_jar.update(grain_jar_params)
-        format.html { redirect_to grain_jar_url(@grain_jar), notice: "Grain jar was successfully updated." }
+        format.html { redirect_to grain_jar_url(@grain_jar), notice: 'Grain jar was successfully updated.' }
         format.json { render :show, status: :ok, location: @grain_jar }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class GrainJarsController < ApplicationController
     @grain_jar.destroy
 
     respond_to do |format|
-      format.html { redirect_to grain_jars_url, notice: "Grain jar was successfully destroyed." }
+      format.html { redirect_to grain_jars_url, notice: 'Grain jar was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_grain_jar
-      @grain_jar = GrainJar.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def grain_jar_params
-      params.require(:grain_jar).permit(:retired, :innoculated, :shaken, :type, :name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_grain_jar
+    @grain_jar = GrainJar.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def grain_jar_params
+    params.require(:grain_jar).permit(:retired, :innoculated, :shaken, :type, :name)
+  end
 end
