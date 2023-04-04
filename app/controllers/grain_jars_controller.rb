@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GrainJarsController < ApplicationController
   before_action :set_grain_jar, only: %i[show edit update destroy]
 
