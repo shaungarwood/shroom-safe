@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @grain_jar %>
+
+<div>
+  <%= link_to "Edit this grain jar", edit_grain_jar_path(@grain_jar) %> |
+  <%= link_to "Back to grain jars", grain_jars_path %>
+
+  <%= button_to "Destroy this grain jar", @grain_jar, method: :delete %>
+</div>

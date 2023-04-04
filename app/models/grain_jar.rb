@@ -1,0 +1,2 @@
+class GrainJar < ApplicationRecord
+end

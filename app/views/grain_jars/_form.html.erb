@@ -1,0 +1,42 @@
+<%= form_with(model: grain_jar) do |form| %>
+  <% if grain_jar.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(grain_jar.errors.count, "error") %> prohibited this grain_jar from being saved:</h2>
+
+      <ul>
+        <% grain_jar.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :retired, style: "display: block" %>
+    <%= form.date_field :retired %>
+  </div>
+
+  <div>
+    <%= form.label :innoculated, style: "display: block" %>
+    <%= form.date_field :innoculated %>
+  </div>
+
+  <div>
+    <%= form.label :shaken, style: "display: block" %>
+    <%= form.date_field :shaken %>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.number_field :type %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

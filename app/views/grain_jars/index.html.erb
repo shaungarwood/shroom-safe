@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Grain jars</h1>
+
+<div id="grain_jars">
+  <% @grain_jars.each do |grain_jar| %>
+    <%= render grain_jar %>
+    <p>
+      <%= link_to "Show this grain jar", grain_jar %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New grain jar", new_grain_jar_path %>
