@@ -32,7 +32,5 @@ DATABASE_PASSWORD=seltzerwater
 4. `bin/rails db:create`
 5. `bin/rails server`
 
-## Deployment
 
-
-- censorshipwreck
+`censorshipwreck`

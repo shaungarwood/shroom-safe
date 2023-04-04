@@ -1,0 +1,83 @@
+     __       _ _    __           _
+    / _| __ _(_) |  / _| __ _ ___| |_
+   | |_ / _` | | | | |_ / _` / __| __|
+   |  _| (_| | | | |  _| (_| \__ \ |_
+   |_|  \__,_|_|_| |_|  \__,_|___/\__|
+
+----
+General to-do:
+1. Jars
+2. Move rails environment to docker-compose environemnt
+3. Faker namer
+
+
+----
+# 03/26/2023
+
+➜  SHROOM_SAFE git:(grains) ✗ git commit -m 'initial commit'
+[grains 4dacada] initial commit
+18 files changed, 254 insertions(+)
+create mode 100644 app/controllers/grains_controller.rb
+create mode 100644 app/helpers/grains_helper.rb
+create mode 100644 app/models/grain.rb
+create mode 100644 app/views/grains/_form.html.erb
+create mode 100644 app/views/grains/_grain.html.erb
+create mode 100644 app/views/grains/_grain.json.jbuilder
+create mode 100644 app/views/grains/edit.html.erb
+create mode 100644 app/views/grains/index.html.erb
+create mode 100644 app/views/grains/index.json.jbuilder
+create mode 100644 app/views/grains/new.html.erb
+create mode 100644 app/views/grains/show.html.erb
+create mode 100644 app/views/grains/show.json.jbuilder
+create mode 100644 db/migrate/20230327000746_create_grains.rb
+create mode 100644 test/controllers/grains_controller_test.rb
+create mode 100644 test/fixtures/grains.yml
+create mode 100644 test/models/grain_test.rb
+create mode 100644 test/system/grains_test.rb
+
+
+----
+
+
+https://www.simplethread.com/how-to-create-a-new-rails-7-app-with-tailwind/
+
+https://github.com/thoughtbot/suspenders
+
+https://www.sitepoint.com/effective-rails-development-vim/
+
+---
+
+config
+  
+good writeup:
+  https://dev.to/vvo/secrets-environment-variables-config-files-the-ruby-on-rails-case-433f
+
+  we'll probably wanna do rails config for stuff later
+
+
+scaffold
+  grains:
+    container: integer (jar / bag)
+    type: integer (oats, brown rice, popcorn)
+    inncoluated: date
+    contamination: integer
+  plate:
+    inncoluated: date
+    contamination: integer
+    agar recipe: integer (mea, pda)
+    container: integer (glass, plastic)
+  tub:
+    (alias inncoluated to created_at)
+
+
+random name
+
+should analyze the fake gem. i don't totally understand how the individual files load the info.
+
+
+
+    
+
+
+
+
