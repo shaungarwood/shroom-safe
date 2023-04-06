@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class GrainJar < ApplicationRecord
-  type enum: %i[
-    oats
-    brown_rice
-    popcorn
-    bird_seed
-  ]
+  enum :grain, {
+    oats: 0,
+    brown_rice: 1,
+    popcorn: 2,
+    bird_seed: 3
+  }
 end

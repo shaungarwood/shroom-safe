@@ -6,7 +6,7 @@ class CreateGrainJars < ActiveRecord::Migration[7.0]
       t.date :retired
       t.date :innoculated
       t.date :shaken
-      t.integer :type
+      t.integer :grain
       t.string :name
 
       t.timestamps
