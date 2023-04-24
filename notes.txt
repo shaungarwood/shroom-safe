@@ -12,6 +12,15 @@ General to-do:
 
 
 ----
+# 04/05/2023
+
+get psql working so you can examine/learn psql DB calls
+can't call a column "type", this is reserved for STI
+
+
+
+
+----
 # 03/26/2023
 
 ➜  SHROOM_SAFE git:(grains) ✗ git commit -m 'initial commit'

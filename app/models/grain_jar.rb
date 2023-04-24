@@ -7,4 +7,12 @@ class GrainJar < ApplicationRecord
     popcorn: 2,
     bird_seed: 3
   }
+
+  def self.active_jars
+    GrainJar.where(retired: nil)
+  end
+
+  def self.retired_jars
+    GrainJar.where.not(retired: nil)
+  end
 end

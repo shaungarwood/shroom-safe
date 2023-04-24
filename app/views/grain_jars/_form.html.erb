@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :grain, style: "display: block" %>
-    <%= form.select :grain, GrainJar.grains.keys %>
+    <%= form.select :grain, enum_selection(GrainJar.grains) %>
   </div>
 
   <div>

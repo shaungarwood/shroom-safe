@@ -1,14 +1,44 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Grain jars</h1>
-
-<div id="grain_jars">
-  <% @grain_jars.each do |grain_jar| %>
-    <%= render grain_jar %>
-    <p>
-      <%= link_to "Show this grain jar", grain_jar %>
-    </p>
-  <% end %>
-</div>
-
 <%= link_to "New grain jar", new_grain_jar_path %>
+
+<h1>Active Grains Jars</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Innoculated</th>
+    <th>Retired</th>
+    <th>Shaken</th>
+    <th>Grain</th>
+  </tr>
+  <% @active_jars.each do |jar| %>
+    <tr>
+      <td><%=jar.name%></td>
+      <td><%=jar.innoculated%></td>
+      <td><%=jar.retired%></td>
+      <td><%=jar.shaken%></td>
+      <td><%=jar.grain%></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<h1>Retired Grains Jars</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Innoculated</th>
+    <th>Retired</th>
+    <th>Shaken</th>
+    <th>Grain</th>
+  </tr>
+  <% @retired_jars.each do |jar| %>
+    <tr>
+      <td><%=jar.name%></td>
+      <td><%=jar.innoculated%></td>
+      <td><%=jar.retired%></td>
+      <td><%=jar.shaken%></td>
+      <td><%=jar.grain%></td>
+    </tr>
+  <% end %>
+</table>

@@ -5,7 +5,10 @@ class GrainJarsController < ApplicationController
 
   # GET /grain_jars or /grain_jars.json
   def index
-    @grain_jars = GrainJar.all
+    # @grain_jars = GrainJar.all
+    @grain_jars = GrainJarsDecorator.decorate_collection(GrainJar.all)
+    @active_jars = GrainJar.active_jars
+    @retired_jars = GrainJar.retired_jars
   end
 
   # GET /grain_jars/1 or /grain_jars/1.json
