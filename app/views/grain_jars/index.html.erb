@@ -2,20 +2,20 @@
 
 <%= link_to "New grain jar", new_grain_jar_path %>
 
-<h1>Active Grains Jars</h1>
+<h1>Grain Jars</h1>
+
+<h2>Active</h2>
 <table>
   <tr>
     <th>Name</th>
     <th>Innoculated</th>
-    <th>Retired</th>
     <th>Shaken</th>
     <th>Grain</th>
   </tr>
   <% @active_jars.each do |jar| %>
     <tr>
-      <td><%=jar.name%></td>
+      <td><%=jar.edit_link%></td>
       <td><%=jar.innoculated%></td>
-      <td><%=jar.retired%></td>
       <td><%=jar.shaken%></td>
       <td><%=jar.grain%></td>
     </tr>
@@ -23,7 +23,7 @@
 </table>
 
 
-<h1>Retired Grains Jars</h1>
+<h2>Retired</h2>
 <table>
   <tr>
     <th>Name</th>

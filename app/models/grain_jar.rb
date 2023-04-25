@@ -5,7 +5,8 @@ class GrainJar < ApplicationRecord
     oats: 0,
     brown_rice: 1,
     popcorn: 2,
-    bird_seed: 3
+    bird_seed: 3,
+    other: 20
   }
 
   def self.active_jars
@@ -13,6 +14,6 @@ class GrainJar < ApplicationRecord
   end
 
   def self.retired_jars
-    GrainJar.where.not(retired: nil)
+    GrainJar.where.not(retired: nil).limit(10)
   end
 end

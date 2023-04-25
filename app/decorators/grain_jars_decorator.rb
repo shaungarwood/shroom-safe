@@ -10,10 +10,33 @@ class GrainJarsDecorator < Draper::Decorator
   #     end
   #   end
 
+  def edit_link
+    helpers.link_to(
+      object.name,
+      helpers.edit_grain_jar_path(object.id),
+    )
+  end
+
+  def shaken
+    return '-' if object.shaken.nil?
+
+    object.shaken.strftime(date_format)
+  end
+
+  def retired
+    return '-' if object.retired.nil?
+
+    object.retired.strftime(date_format)
+  end
+
   def innoculated
     return '-' if object.innoculated.nil?
 
-    object.innoculated.to_fs(:db)
+    object.innoculated.strftime(date_format)
+  end
+
+  def date_format
+    "%m/%d"
   end
 
   def grain
