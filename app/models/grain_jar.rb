@@ -9,11 +9,12 @@ class GrainJar < ApplicationRecord
     other: 20
   }
 
-  def self.active_jars
-    GrainJar.where(retired: nil)
-  end
+  scope :active_jars, -> { where(retired: nil) }
+  scope :retired_jars, -> { where.not(retired: nil) }
 
-  def self.retired_jars
-    GrainJar.where.not(retired: nil).limit(10)
+  validates :grain, presence: true
+
+  def shake(date: Date.today)
+    self.update_attribute(:shaken, date)
   end
 end

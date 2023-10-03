@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class GrainJarsController < ApplicationController
-  before_action :set_grain_jar, only: %i[show edit update destroy]
+  before_action :set_grain_jar, only: %i[show edit update destroy shake]
 
   # GET /grain_jars or /grain_jars.json
   def index
@@ -58,6 +58,11 @@ class GrainJarsController < ApplicationController
     end
   end
 
+  def shake
+    date = params[:date] || Date.today
+    @grain_jar.shake(date: date)
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -67,6 +72,6 @@ class GrainJarsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def grain_jar_params
-    params.require(:grain_jar).permit(:retired, :innoculated, :shaken, :type, :name)
+    params.require(:grain_jar).permit(:grain, :retired, :innoculated, :shaken, :type, :name, :date)
   end
 end

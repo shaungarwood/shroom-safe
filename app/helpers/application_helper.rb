@@ -2,6 +2,6 @@
 
 module ApplicationHelper
   def enum_selection(enum)
-    enum.map{|k,v| [k.titleize, v]}
+    enum.map{|k,v| [k.titleize, k]}
   end
 end
