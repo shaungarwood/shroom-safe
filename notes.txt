@@ -7,13 +7,37 @@
 
 ---
 
+history
+------------------------------
+| id | old value | new value |
+------------------------------
+| 1  |  MSS 1    |  plate 3  |
+------------------------------
+| 2  |  plate 3  |  plate 6  |
+------------------------------
+| 3  |  plate 6  |  jar 10   |
+------------------------------
+
+Give the history for mushroom 3
+plate 2 >jar 4 > tub 55 > flush 69 > mushroom 3
+
 Jars:
  X edit link on jar name
- - hide retired column on "active jars"
- - add an "other grain"
- - validation for grains can't be empty
- - retire/shake buttons on edit jar page
+ X hide retired column on "active jars"
+ X add an "other grain"
+ X validation for grains can't be empty
+ X retire/shake buttons on edit jar page
  - lines in the table? or alternating row colors
+   - na, this is more styling
+ - add simplecov
+ let's test everything up and call this branch a day
+ "branch! you're a day!"
+ - vim copy/paste to system clipboard
+ - tests
+  - model
+  - view
+  - controller
+  - shake action
 
 ----
 General to-do:
