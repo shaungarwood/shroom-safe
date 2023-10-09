@@ -86,12 +86,12 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    coderay (1.1.3)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
     debug (1.7.1)
     diff-lcs (1.5.0)
+    docile (1.4.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -150,14 +150,13 @@ GEM
     parser (3.2.2.0)
       ast (~> 2.4.1)
     pg (1.4.6)
-    pry (0.14.2)
-      coderay (~> 1.1)
-      method_source (~> 1.0)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.4)
+    rack-mini-profiler (3.1.1)
+      rack (>= 1.2.0)
     rack-test (2.1.0)
       rack (>= 1.3)
     rails (7.0.4.3)
@@ -228,6 +227,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -278,12 +283,13 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pg (~> 1.1)
-  pry
   puma (~> 5.0)
+  rack-mini-profiler
   rails (~> 7.0.4, >= 7.0.4.3)
   rspec-rails (~> 6.0.0)
   rubocop
   selenium-webdriver
+  simplecov
   sprockets-rails
   stimulus-rails
   strong_migrations
