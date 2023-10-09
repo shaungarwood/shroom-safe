@@ -32,3 +32,7 @@
 
 # Ignore environmental vars file
 /.env.*
+coverage
+
+# Ignore ctags
+/tags
